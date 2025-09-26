@@ -6897,3 +6897,15 @@ article.danh-sach .entry-content p {
   color: #555;
   margin: 0;
 }
+.wp-block-heading {
+  color: white;
+}
+.wp-block-heading::before {
+  content: "";
+  display: inline-block;
+  height: 50px;
+  width: 2px;
+  background: white;
+  margin-right: 10px;
+  vertical-align: middle;
+}

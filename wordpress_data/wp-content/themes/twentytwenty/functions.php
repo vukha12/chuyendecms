@@ -854,3 +854,13 @@ function twentytwenty_get_elements_array()
 	 */
 	return apply_filters('twentytwenty_get_elements_array', $elements);
 }
+add_filter('render_block', function ($block_content, $block) {
+	if ($block['blockName'] === 'core/latest-posts') {
+		$block_content = str_replace(
+			'<a class="wp-block-latest-posts__post-title"',
+			'<i class="fa fa-angle-double-right" style="color: white; margin-right: 3px;"></i> <a class="wp-block-latest-posts__post-title"',
+			$block_content
+		);
+	}
+	return $block_content;
+}, 10, 2);
