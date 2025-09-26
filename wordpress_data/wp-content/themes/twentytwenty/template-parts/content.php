@@ -12,54 +12,54 @@
  * @since Twenty Twenty 1.0
  */
 
+$class = '';
+if (!is_single()) {
+	$class = 'danh-sach';
+}
 ?>
 
-<article <?php post_class('custom-timeline-card'); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class($class); ?> id="post-<?php the_ID(); ?>">
 
-	<?php if (is_single()) : ?>
-		<!-- Giao diện chi tiết bài viết -->
+	<?php if (!is_single()) : ?>
+		<!-- Cột ngày tháng -->
+		<div class="post-date">
+			<div class="day"><?php echo get_the_date('d'); ?></div>
+			<div class="month"><?php echo strtoupper(get_the_date('M')); ?></div>
+			<div class="year"><?php echo get_the_date('Y'); ?></div>
+		</div>
+
+		<!-- Thumbnail -->
+		<?php if (has_post_thumbnail()) : ?>
+			<div class="post-thumbnail">
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail('medium'); ?>
+				</a>
+			</div>
+		<?php endif; ?>
+
+		<!-- Nội dung bài viết -->
 		<div class="entry-content">
+			<h2 class="entry-title">
+				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			</h2>
 
-			<?php
-			if (is_search() || ! is_singular() && 'summary' === get_theme_mod('blog_content', 'full')) {
-				the_excerpt();
-			} else {
-				if (is_single()) {
-					the_content(__('Continue reading', 'twentytwenty'));
-				} else {
-					$post = get_post();
-					echo substr($post->post_content, 0, 100); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				}
-			}
-			?>
+			<div class="post-categories">
+				<?php the_category(' '); ?>
+			</div>
 
-		</div><!-- .entry-content -->
-
+			<p>
+				<?php echo wp_trim_words(get_the_content(), 30, '...'); ?>
+			</p>
+		</div>
 	<?php else : ?>
-		<!-- Giao diện danh sách bài viết (timeline) -->
-		<div class="timeline-card-wrapper">
+		<!-- Nếu đang ở trang chi tiết -->
+		<?php
+		get_template_part('template-parts/entry-header');
+		get_template_part('template-parts/featured-image');
+		?>
 
-			<!-- Ngày bên trái -->
-			<div class="timeline-date">
-				<span class="day"><?php echo get_the_date('d'); ?></span>
-				<span class="month"><?php echo strtoupper(get_the_date('M')); ?></span>
-			</div>
-
-			<!-- Nội dung bên phải -->
-			<div class="timeline-content">
-				<h2 class="timeline-title">
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				</h2>
-
-				<div class="timeline-excerpt">
-					<?php
-					$content = wp_strip_all_tags(get_the_content());
-					$excerpt = mb_substr($content, 0, 120);
-					echo $excerpt . ' [...]';
-					?>
-				</div>
-			</div>
-
+		<div class="entry-content">
+			<?php the_content(); ?>
 		</div>
 	<?php endif; ?>
 

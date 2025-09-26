@@ -6814,66 +6814,86 @@ section .section-title {
   }
 }
 
-.custom-timeline-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-  padding: 15px 20px;
+/* ==========================
+   LIST POST STYLE
+   ========================== */
+article.danh-sach {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
+  gap: 20px;
+  border: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-.timeline-card-wrapper {
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-
-.timeline-date {
+/* Cột ngày tháng */
+article.danh-sach .post-date {
+  min-width: 80px;
   text-align: center;
-  padding: 10px 15px;
-  border-right: 1px solid #ccc;
-  margin-right: 20px;
-  min-width: 60px;
-  color: #0073aa;
+  border-right: 1px solid #ddd;
+  padding-right: 15px;
+}
+article.danh-sach .post-date .day {
+  font-size: 32px;
   font-weight: bold;
-}
-
-.timeline-date .day {
-  font-size: 26px;
+  color: #0056b3;
   line-height: 1;
-  display: block;
 }
-
-.timeline-date .month {
-  font-size: 12px;
+article.danh-sach .post-date .month {
   text-transform: uppercase;
-  display: block;
-  margin-top: 4px;
+  font-size: 12px;
+  color: #999;
 }
 
-.timeline-content {
+/* Thumbnail */
+article.danh-sach .post-thumbnail {
+  flex: 0 0 200px;
+}
+article.danh-sach .post-thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* Nội dung */
+article.danh-sach .entry-content {
   flex: 1;
 }
-
-.timeline-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 0 8px;
-  color: #0073aa;
+article.danh-sach .entry-content h2,
+article.danh-sach .entry-content h3,
+article.danh-sach .entry-content h1 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  line-height: 1.4;
 }
-
-.timeline-title a {
-  color: #0073aa;
+article.danh-sach .entry-content h2 a {
+  color: #0056b3;
   text-decoration: none;
 }
-
-.timeline-title a:hover {
+article.danh-sach .entry-content h2 a:hover {
   text-decoration: underline;
 }
 
-.timeline-excerpt {
-  font-size: 14px;
+/* Categories */
+article.danh-sach .post-categories {
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #777;
+}
+article.danh-sach .post-categories a {
   color: #333;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+/* Excerpt */
+article.danh-sach .entry-content p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
 }
