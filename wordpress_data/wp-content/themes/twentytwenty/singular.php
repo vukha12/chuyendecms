@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying single posts and pages.
  *
@@ -16,20 +17,27 @@ get_header();
 
 	<?php
 
-	if ( have_posts() ) {
+	if (have_posts()) {
 
-		while ( have_posts() ) {
+		while (have_posts()) {
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part('template-parts/content', get_post_type());
 		}
 	}
 
 	?>
+	<?php
+	if (is_singular('post')) { // Chỉ hiển thị cho post
+		if (comments_open() || get_comments_number()) {
+			comments_template();
+		}
+	}
+	?>
 
 </main><!-- #site-content -->
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+<?php get_template_part('template-parts/footer-menus-widgets'); ?>
 
 <?php
 get_footer();

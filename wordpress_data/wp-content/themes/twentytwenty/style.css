@@ -6909,3 +6909,18 @@ article.danh-sach .entry-content p {
   margin-right: 10px;
   vertical-align: middle;
 }
+
+/* Thêm icon trước các category */
+.wp-block-categories-list li::before {
+  content: "»"; /* icon giống phần Recent Posts */
+  color: #fff; /* đổi màu icon nếu muốn */
+  margin-right: 8px; /* khoảng cách giữa icon và chữ */
+  font-weight: bold;
+}
+
+wp-block-latest-comments__comment-link::before {
+  content: "»"; /* icon giống phần Recent Posts */
+  color: #fff; /* đổi màu icon nếu muốn */
+  margin-right: 8px; /* khoảng cách giữa icon và chữ */
+  font-weight: bold;
+}
