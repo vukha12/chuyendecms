@@ -6963,3 +6963,45 @@ article.danh-sach .entry-content p {
   margin-right: 8px;
   font-weight: bold;
 }
+.wp-block-categories-list li {
+  padding: 3px 0;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+.wp-block-categories-list li:hover {
+  margin-bottom: 8px;
+}
+.wp-block-categories-list li:hover {
+  padding: 3px 0;
+  margin-left: 5px;
+  font-weight: 700;
+}
+.wp-block-categories-list li a i {
+  margin-right: 5px;
+}
+.wp-block-categories-list li:hover a i {
+  font-weight: 700;
+}
+
+/* -------------------------------------------- */
+.wp-block-latest-comments li {
+  padding: 3px 0;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+.wp-block-latest-comments li:hover {
+  margin-bottom: 8px;
+}
+.wp-block-latest-comments li:hover {
+  padding: 3px 0;
+  margin-left: 5px;
+  font-weight: 700;
+}
+.wp-block-latest-comments li a i {
+  margin-right: 5px;
+}
+.wp-block-latest-comments li:hover a i {
+  font-weight: 700;
+}
