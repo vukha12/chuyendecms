@@ -25,17 +25,16 @@ if (!is_single()) {
 		<div class="post-date">
 			<div class="day"><?php echo get_the_date('d'); ?></div>
 			<div class="month"><?php echo strtoupper(get_the_date('M')); ?></div>
-			<div class="year"><?php echo get_the_date('Y'); ?></div>
 		</div>
 
 		<!-- Thumbnail -->
-		<?php if (has_post_thumbnail()) : ?>
+		<!-- <?php if (has_post_thumbnail()) : ?>
 			<div class="post-thumbnail">
 				<a href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail('medium'); ?>
 				</a>
 			</div>
-		<?php endif; ?>
+		<?php endif; ?> -->
 
 		<!-- Nội dung bài viết -->
 		<div class="entry-content">
@@ -43,12 +42,8 @@ if (!is_single()) {
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h2>
 
-			<div class="post-categories">
-				<?php the_category(' '); ?>
-			</div>
-
 			<p>
-				<?php echo wp_trim_words(get_the_content(), 30, '...'); ?>
+				<?php echo wp_trim_words(get_the_content(), 100, '...'); ?>
 			</p>
 		</div>
 	<?php else : ?>
