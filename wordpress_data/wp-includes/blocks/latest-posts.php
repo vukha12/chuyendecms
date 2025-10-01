@@ -202,7 +202,7 @@ function render_block_core_latest_posts($attributes)
 
 	remove_filter('excerpt_length', 'block_core_latest_posts_get_excerpt_length', 20);
 
-	$classes = array('wp-block-latest-posts__list tim-thay-roi list-unstyled quick-links');
+	$classes = array('wp-block-latest-posts__list list-unstyled quick-links');
 	if (isset($attributes['postLayout']) && 'grid' === $attributes['postLayout']) {
 		$classes[] = 'is-grid';
 	}

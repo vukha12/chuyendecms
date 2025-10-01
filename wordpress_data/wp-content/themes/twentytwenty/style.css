@@ -6956,3 +6956,10 @@ article.danh-sach .entry-content p {
 .account-link a:hover {
   background: #e0e0e0;
 }
+
+.wp-block-categories-list li::before {
+  content: "»";
+  color: #fff;
+  margin-right: 8px;
+  font-weight: bold;
+}
