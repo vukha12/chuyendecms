@@ -979,7 +979,7 @@ th {
 /* Sections ---------------------------------- */
 
 section {
-  padding: 5rem 0;
+  padding: 0 0;
   width: 100%;
 }
 
@@ -1397,6 +1397,8 @@ body:not(.enable-search-modal) .header-titles-wrapper {
   display: none;
   letter-spacing: -0.0311em;
   transition: all 0.15s linear;
+  padding: 0 20px;
+  margin-right: 0px;
 }
 
 .site-logo a,
@@ -4987,7 +4989,7 @@ a.to-the-top > * {
   /* SECTIONS */
 
   section {
-    padding: 8rem 0;
+    padding: 0;
   }
 
   .section-inner {
@@ -5002,11 +5004,13 @@ a.to-the-top > * {
 
   .site-title {
     font-size: 2.4rem;
-    font-weight: 700;
+    font-weight: 500;
+    color: #6d6d6d;
   }
 
   .site-description {
     display: block;
+    background-color: #cbcaca;
   }
 
   .site-logo img {
@@ -5752,7 +5756,7 @@ a.to-the-top > * {
   /* FOOTER WIDGETS */
 
   .footer-widgets-outer-wrapper {
-    padding: 8rem 0;
+    padding: 0;
   }
 
   .footer-widgets-wrapper {
@@ -6752,6 +6756,8 @@ section .section-title {
 }
 #footer {
   background: #007b5e !important;
+  display: flex;
+  justify-content: center;
 }
 #footer h5 {
   padding-left: 10px;
@@ -6900,27 +6906,53 @@ article.danh-sach .entry-content p {
 .wp-block-heading {
   color: white;
 }
-.wp-block-heading::before {
-  content: "";
+
+/* Container search form */
+.search-form {
+  display: flex;
+  align-items: center;
+  max-width: 350px; /* giới hạn chiều rộng */
+}
+
+/* Ô input search */
+.search-form .search-field {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px 6px 6px 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Nút submit */
+.search-form .search-submit {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  color: #333;
+  border-radius: 6px 6px 6px 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hiệu ứng hover */
+.search-form .search-submit:hover {
+  background: #e0e0e0;
+}
+
+.account-link a {
   display: inline-block;
-  height: 50px;
-  width: 2px;
-  background: white;
-  margin-right: 10px;
-  vertical-align: middle;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  border-radius: 6px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Thêm icon trước các category */
-.wp-block-categories-list li::before {
-  content: "»"; /* icon giống phần Recent Posts */
-  color: #fff; /* đổi màu icon nếu muốn */
-  margin-right: 8px; /* khoảng cách giữa icon và chữ */
-  font-weight: bold;
-}
-
-wp-block-latest-comments__comment-link::before {
-  content: "»"; /* icon giống phần Recent Posts */
-  color: #fff; /* đổi màu icon nếu muốn */
-  margin-right: 8px; /* khoảng cách giữa icon và chữ */
-  font-weight: bold;
+.account-link a:hover {
+  background: #e0e0e0;
 }
