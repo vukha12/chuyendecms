@@ -38,39 +38,23 @@
 
 			<div class="header-titles-wrapper">
 
-				<?php
-
-				// Check whether the header search is activated in the customizer.
-				$enable_header_search = get_theme_mod('enable_header_search', true);
-
-				if (true === $enable_header_search) {
-
-
-				?>
-
-					<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
-						<span class="toggle-inner">
-							<span class="toggle-icon">
-								<?php twentytwenty_the_theme_svg('search'); ?>
-							</span>
-							<span class="toggle-text"><?php _ex('Search', 'toggle text', 'twentytwenty'); ?></span>
-						</span>
-					</button><!-- .search-toggle -->
-
-				<?php } ?>
 
 				<div class="header-titles">
 
 					<?php
-					// Site title or logo.
-					twentytwenty_site_logo();
-
 					// Site description.
 					twentytwenty_site_description();
 					?>
 
 				</div><!-- .header-titles -->
-				<?php get_search_form(); ?>
+
+				<div class="header-home">
+					<?php
+					// Site title or logo.
+					twentytwenty_site_logo();
+					?>
+				</div>
+
 
 				<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
 					<span class="toggle-inner">
@@ -82,6 +66,7 @@
 				</button><!-- .nav-toggle -->
 
 			</div><!-- .header-titles-wrapper -->
+
 
 			<div class="header-navigation-wrapper">
 

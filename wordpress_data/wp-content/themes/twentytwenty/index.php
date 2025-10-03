@@ -86,9 +86,6 @@ get_header();
 
 		while (have_posts()) {
 			++$i;
-			if ($i > 1) {
-				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
-			}
 			the_post();
 
 			get_template_part('template-parts/content', get_post_type());
@@ -97,7 +94,6 @@ get_header();
 	?>
 
 		<div class="no-search-results-form section-inner thin">
-
 			<?php
 			get_search_form(
 				array(
