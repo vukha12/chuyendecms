@@ -19,7 +19,7 @@
 
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -38,6 +38,26 @@
 
 			<div class="header-titles-wrapper">
 
+				<?php
+
+				// Check whether the header search is activated in the customizer.
+				$enable_header_search = get_theme_mod('enable_header_search', true);
+
+				if (true === $enable_header_search) {
+
+
+				?>
+
+					<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+						<span class="toggle-inner">
+							<span class="toggle-icon">
+								<?php twentytwenty_the_theme_svg('search'); ?>
+							</span>
+							<span class="toggle-text"><?php _ex('Search', 'toggle text', 'twentytwenty'); ?></span>
+						</span>
+					</button><!-- .search-toggle -->
+
+				<?php } ?>
 
 				<div class="header-titles">
 
@@ -148,14 +168,28 @@
 									</span>
 								</button><!-- .search-toggle -->
 
+								<!-- dropdown account -->
+
 							</div>
 
-							<div class="account-link">
-								<a href="<?php echo wp_login_url(); ?>">Account</a>
-							</div>
 						<?php
 						}
 						?>
+
+						<div class="toggle-wrapper wrap-account">
+							<div>
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/user.png" alt="account">
+							</div>
+							<div class="dropdown dropdown-account">
+								<button class="btn btn-account dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Account
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
+									<li><a class="dropdown-item" href="<?php echo admin_url('profile.php'); ?>">Profile</a></li>
+								</ul>
+							</div>
+						</div>
 
 					</div><!-- .header-toggles -->
 				<?php
@@ -172,7 +206,7 @@
 			get_template_part('template-parts/modal-search');
 		}
 		?>
-
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 	</header><!-- #site-header -->
 
 	<?php

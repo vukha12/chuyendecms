@@ -1350,7 +1350,6 @@ ul.social-icons li {
   max-width: 168rem;
   padding: 3.15rem 0;
   z-index: 100;
-  border: 1px solid rgb(223, 217, 217);
   border-radius: 2px;
 }
 
@@ -5845,7 +5844,7 @@ a.to-the-top > * {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0 4rem;
   }
 
   .header-titles-wrapper {
@@ -7019,4 +7018,34 @@ article .wp-block-heading {
   background-color: #c9c5c5;
   padding: 30px 12px;
   margin-right: 16px;
+}
+.wrap-account {
+  display: flex;
+  flex-direction: column; /* xếp dọc: avatar trên, chữ dưới */
+  align-items: center; /* căn giữa ngang */
+  justify-content: center; /* căn giữa dọc */
+  gap: 6px; /* khoảng cách giữa avatar và chữ */
+  padding: 10px;
+}
+
+.wrap-account img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.btn-account {
+  background: none; /* bỏ màu nền nếu muốn */
+  border: none; /* bỏ viền */
+  padding: 0;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.btn-account:hover {
+  color: #007bff; /* khi hover đổi màu */
+}
+.primary-menu-wrapper ul li a {
+  color: rgba(122, 122, 122, 0.8) !important;
 }
