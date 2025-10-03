@@ -1341,14 +1341,17 @@ ul.social-icons li {
 /* -------------------------------------------------------------------------- */
 
 #site-header {
-  background: #fff;
+  background: rgb(248, 248, 248);
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .header-inner {
   max-width: 168rem;
   padding: 3.15rem 0;
   z-index: 100;
+  border: 1px solid rgb(223, 217, 217);
+  border-radius: 2px;
 }
 
 /* Header Titles ----------------------------- */
@@ -1357,7 +1360,7 @@ ul.social-icons li {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 0 4rem;
+  padding: 0 2rem;
   text-align: center;
 }
 
@@ -5002,9 +5005,9 @@ a.to-the-top > * {
   }
 
   .site-title {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    color: #6d6d6d;
+    color: #5e5c5c;
   }
 
   .site-description {
@@ -5842,11 +5845,10 @@ a.to-the-top > * {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 2.8rem 0;
+    padding: 0 1rem;
   }
 
   .header-titles-wrapper {
-    margin-right: 4rem;
     max-width: 50%;
     padding: 0;
     text-align: left;
@@ -7012,4 +7014,9 @@ article .wp-block-heading {
 .setup-meta {
   display: flex;
   margin: 0;
+}
+.header-home {
+  background-color: #c9c5c5;
+  padding: 30px 12px;
+  margin-right: 16px;
 }

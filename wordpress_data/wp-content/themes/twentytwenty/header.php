@@ -55,6 +55,9 @@
 					?>
 				</div>
 
+				<div class="header-search">
+					<?php get_search_form(); ?>
+				</div>
 
 				<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
 					<span class="toggle-inner">
