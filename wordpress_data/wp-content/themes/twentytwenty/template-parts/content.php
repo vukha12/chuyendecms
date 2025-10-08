@@ -14,7 +14,7 @@
 
 $class = '';
 if (!is_single()) {
-	$class = 'danh-sach';
+	$class = 'danh-sach ';
 }
 ?>
 

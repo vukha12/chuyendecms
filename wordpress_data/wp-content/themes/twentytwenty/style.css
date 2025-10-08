@@ -985,10 +985,7 @@ section {
 }
 
 .section-inner {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 120rem;
-  width: calc(100% - 4rem);
+  /* width: calc(100% - 4rem); */
 }
 
 .section-inner.max-percentage {
@@ -1001,10 +998,6 @@ section {
 
 .section-inner.small {
   max-width: 80rem;
-}
-
-.section-inner.medium {
-  max-width: 100rem;
 }
 
 .section-inner.no-margin {
@@ -4994,7 +4987,7 @@ a.to-the-top > * {
   }
 
   .section-inner {
-    width: calc(100% - 8rem);
+    /* width: calc(100% - 8rem); */
   }
 
   /* Site Header --------------------------- */
@@ -5192,7 +5185,7 @@ a.to-the-top > * {
   /* Post: Archive ------------------------- */
 
   .archive-header {
-    padding: 8rem 0;
+    padding: 4rem 0;
   }
 
   .reduced-spacing .archive-header {
@@ -5222,7 +5215,7 @@ a.to-the-top > * {
   /* POST HEADER */
 
   .singular .entry-header {
-    padding: 8rem 0;
+    padding: 0 0;
   }
 
   .entry-categories {
@@ -7048,4 +7041,78 @@ article .wp-block-heading {
 }
 .primary-menu-wrapper ul li a {
   color: rgba(122, 122, 122, 0.8) !important;
+}
+.form-control-borderless {
+  border: none !important;
+}
+
+.form-control-borderless:hover
+  .form-control-borderless:focus
+  .form-control-borderless:active {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.archive-header-inner {
+  margin-bottom: 3rem;
+}
+.search-result {
+  background-color: #f5efe0;
+  padding: 2rem 0;
+}
+.entry-header-inner {
+  font-size: 24px;
+  padding: 2rem 0 6rem 0;
+  position: relative;
+}
+.entry-content {
+  color: #5e5c5c;
+  font-size: 18px;
+  background-color: #f4f4f4;
+  padding-top: 2rem;
+}
+.wrap-header-title-circle {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #bbb;
+}
+.circle-date {
+  background-color: #f5c518; /* màu vàng */
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: #1a1a1a;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ngày (ở trên) */
+.circle-date .day {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Vùng giữa chứa tháng và năm */
+
+/* Tháng (ở giữa, có gạch ngang ngăn cách) */
+.circle-date .month {
+  font-size: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  padding: 2px 4px;
+  margin-right: 4px;
+}
+
+/* Năm (bên phải) */
+.circle-date .year {
+  font-size: 14px;
+}
+.post {
+  padding: 0 !important;
 }
