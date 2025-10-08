@@ -3682,7 +3682,7 @@ figure.wp-block-table.is-style-stripes {
   > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(
     .is-style-wide
   ) {
-  max-width: 58rem;
+  max-width: 74rem;
   width: calc(100% - 4rem);
 }
 
@@ -7061,7 +7061,7 @@ article .wp-block-heading {
   padding: 2rem 0;
 }
 .entry-header-inner {
-  font-size: 24px;
+  font-size: 28px;
   padding: 2rem 0 6rem 0;
   position: relative;
 }
@@ -7074,9 +7074,28 @@ article .wp-block-heading {
 .wrap-header-title-circle {
   display: flex;
   justify-content: space-between;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #bbb;
+  background-color: #f4f4f4; /* màu nền vùng header */
+  border-bottom: 1px solid #ccc; /* đường ngang dưới */
+  position: relative;
 }
+
+/* notch (xoay ô vuông để cắt đường tạo mũi nhọn) */
+.wrap-header-title-circle::before {
+  content: "";
+  position: absolute;
+  width: 15px; /* kích thước notch (tăng/giảm nếu cần) */
+  height: 15px;
+  left: 64px; /* vị trí notch cách trái (CHỈNH ĐỂ CANH CHÍNH XÁC) */
+  bottom: -8px; /* đặt sao cho đỉnh notch chạm đường ngang */
+  background: #f4f4f4; /* PHẢI TRÙNG MÀU với background của vùng header */
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  transform: rotate(45deg);
+  /* nhẹ viền/đổ bóng mờ giống ảnh */
+  box-shadow: -1px -1px 0 rgba(208, 45, 45, 0.02) inset,
+    0 0 0 0 rgba(213, 16, 16, 0.02);
+}
+
 .circle-date {
   background-color: #f5c518; /* màu vàng */
   width: 70px;
@@ -7095,8 +7114,8 @@ article .wp-block-heading {
 
 /* Ngày (ở trên) */
 .circle-date .day {
-  font-size: 18px;
-  line-height: 1;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
 }
 
 /* Vùng giữa chứa tháng và năm */
@@ -7105,14 +7124,18 @@ article .wp-block-heading {
 .circle-date .month {
   font-size: 14px;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
-  padding: 2px 4px;
   margin-right: 4px;
 }
 
 /* Năm (bên phải) */
 .circle-date .year {
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
 }
-.post {
-  padding: 0 !important;
+
+h1.entry-title {
+  font-size: 28px;
+  color: black;
+  margin: 0 !important;
+  font-weight: 700;
 }

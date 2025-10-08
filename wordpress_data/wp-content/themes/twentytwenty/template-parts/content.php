@@ -49,14 +49,15 @@ if (!is_single()) {
 
 	<?php else : ?>
 		<!-- Nếu đang ở trang chi tiết -->
-		<?php
-		get_template_part('template-parts/entry-header');
-		get_template_part('template-parts/featured-image');
-		?>
+
 
 		<div class="entry-content">
+			<?php
+			get_template_part('template-parts/entry-header');
+			?>
 			<?php the_content(); ?>
 		</div>
+
 	<?php endif; ?>
 
 </article>
