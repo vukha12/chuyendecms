@@ -185,7 +185,7 @@
 									Account
 								</button>
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="<?php echo wp_logout_url(home_url()); ?>">Logout</a></li>
+									<li><a class="dropdown-item" href="<?php echo wp_logout_url(); ?>">Logout</a></li>
 									<li><a class="dropdown-item" href="<?php echo admin_url('profile.php'); ?>">Profile</a></li>
 								</ul>
 							</div>
