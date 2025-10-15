@@ -7139,3 +7139,70 @@ h1.entry-title {
   margin: 0 !important;
   font-weight: 700;
 }
+.entry-content-home {
+  background-color: white;
+}
+
+.custom-post-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 60px 0;
+}
+
+.custom-post-navigation .nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  text-decoration: none;
+  color: #222;
+  transition: color 0.2s ease;
+}
+
+.custom-post-navigation .nav-item a:hover {
+  color: #0073aa;
+}
+
+/* --- DATE STYLE --- */
+.custom-post-navigation .date {
+  display: flex;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.custom-post-navigation .date .day-month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.custom-post-navigation .day-month .day {
+  font-size: 20px;
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+}
+
+.custom-post-navigation .day-month .month {
+  font-size: 20px;
+  color: #000;
+}
+
+.custom-post-navigation .year {
+  font-size: 20px;
+  color: #000;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* --- TITLE STYLE --- */
+.custom-post-navigation .title {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #222;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
