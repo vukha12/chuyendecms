@@ -7221,3 +7221,15 @@ h1.entry-title {
 .comments-post {
   font-size: 18px !important;
 }
+.card {
+  border-radius: 0.5rem;
+}
+
+.media img {
+  border: 2px solid #dee2e6;
+}
+
+.media:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.2s;
+}
