@@ -7206,3 +7206,18 @@ h1.entry-title {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+#reply-title {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.comments {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.comment-respond {
+  padding: 0 !important;
+}
+.comments-post {
+  font-size: 18px !important;
+}
