@@ -7098,8 +7098,8 @@ article .wp-block-heading {
 
 .circle-date {
   background-color: #f5c518; /* màu vàng */
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   color: #1a1a1a;
   font-weight: bold;
@@ -7114,7 +7114,7 @@ article .wp-block-heading {
 
 /* Ngày (ở trên) */
 .circle-date .day {
-  font-size: 14px;
+  font-size: 12px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -7122,14 +7122,14 @@ article .wp-block-heading {
 
 /* Tháng (ở giữa, có gạch ngang ngăn cách) */
 .circle-date .month {
-  font-size: 14px;
+  font-size: 12px;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   margin-right: 4px;
 }
 
 /* Năm (bên phải) */
 .circle-date .year {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -7232,4 +7232,163 @@ h1.entry-title {
 .media:hover {
   background-color: #f8f9fa;
   transition: background-color 0.2s;
+}
+
+.wrap-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.wrap-post .left-post {
+  flex: 0 0 20%;
+  min-width: 200px;
+  background-color: #dedede !important;
+}
+
+.wrap-post .entry-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.wrap-post .latest-news-section {
+  flex: 0 0 20%;
+  min-width: 200px;
+}
+
+.left-post-children {
+  display: inline-block !important;
+  margin: 10px;
+}
+.categories-widget {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.categories-widget h5 {
+  border-bottom: 3px solid #f5f5f5;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.categories-widget ul {
+  margin: 0;
+  padding: 0;
+}
+
+.categories-widget ul li {
+  position: relative;
+  padding: 10px 0;
+  border-bottom: 1px solid #f2f2f2;
+  display: flex;
+  align-items: center;
+}
+
+.categories-widget ul li:last-child {
+  border-bottom: none;
+}
+
+.categories-widget ul li .dot {
+  width: 8px;
+  height: 8px;
+  background: #ffc107;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.categories-widget ul li a {
+  color: #0059ff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.categories-widget ul li a:hover {
+  color: #007bff;
+}
+
+.latest-news-section {
+  background-color: #44bfc8;
+  color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.latest-news-wrapper {
+  background-color: #44bfc8;
+}
+
+.news-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 8px;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  font-weight: 600;
+  line-height: 1.2;
+  min-width: 40px;
+  color: #fff;
+  display: flex;
+}
+
+.news-date .day-moth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.news-date .day-month .day {
+  font-size: 12px;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 2px;
+}
+
+.news-date .day-month .month {
+  font-size: 12px;
+  color: white;
+}
+.news-date .year {
+  font-size: 12px;
+  color: white;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.news-title a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.news-title a:hover {
+  text-decoration: underline;
+}
+
+.view-all {
+  background-color: #59cbd3;
+}
+
+.view-all a {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.view-all a:hover {
+  text-decoration: underline;
 }
