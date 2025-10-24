@@ -993,7 +993,7 @@ section {
 }
 
 .section-inner.thin {
-  max-width: 58rem;
+  /* max-width: 58rem; */
 }
 
 .section-inner.small {
@@ -2389,8 +2389,8 @@ body.template-full-width
   margin: 0;
 }
 
-.archive-subtitle p:last-child {
-  margin-bottom: 0;
+.archive-subtitle {
+  text-align: center !important;
 }
 
 /* Posts ------------------------------------- */
@@ -6737,7 +6737,7 @@ a.to-the-top > * {
 /* Footer */
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 section {
-  padding: 60px 0;
+  padding: 20px 0;
 }
 
 section .section-title {
@@ -7390,5 +7390,126 @@ h1.entry-title {
 }
 
 .view-all a:hover {
+  text-decoration: underline;
+}
+
+.sidebar-posts,
+.sidebar-comments {
+  padding: 16px;
+  background: #f7f7f7;
+  border-radius: 4px;
+}
+
+.recent-item,
+.comment-item {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 8px;
+}
+
+.sidebar-posts {
+  padding: 16px;
+  background: #f7f7f7;
+  border-radius: 4px;
+}
+
+.sidebar-posts h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 22px;
+  color: #0056c4;
+}
+
+.recent-item {
+  margin-bottom: 14px;
+}
+
+.recent-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.recent-thumb {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.recent-title {
+  display: block;
+  color: #6c757d;
+  font-weight: 600;
+  margin-top: 8px;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+/* --- Sidebar Comments --- */
+.sidebar-comments {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.sidebar-comments h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.comment-item:hover {
+  background: #f5f5f5;
+}
+
+.comment-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.comment-body {
+  flex: 1;
+}
+
+.comment-author {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.comment-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.comment-post-link {
+  font-size: 13px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.comment-post-link:hover {
   text-decoration: underline;
 }

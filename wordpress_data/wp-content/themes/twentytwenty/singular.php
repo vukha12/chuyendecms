@@ -72,56 +72,6 @@ get_header();
 			</div>
 		</section>
 	</div>
-	<?php
-	$post_id = get_the_ID();
-	$comments = get_comments(array(
-		'post_id' => $post_id,
-		'status'  => 'approve',
-		'order'   => 'ASC',
-	));
-	?>
-
-	<div class="container my-5">
-		<div class="row justify-content-center">
-			<div class="col-md-8">
-
-				<div class="card shadow-sm">
-					<div class="card-header bg-primary text-white">
-						<h4 class="mb-0">
-							<?php echo count($comments); ?> Comments
-						</h4>
-					</div>
-
-					<div class="card-body">
-						<?php if ($comments): ?>
-							<?php foreach ($comments as $comment): ?>
-								<div class="media mb-4 border-bottom pb-3">
-									<?php echo get_avatar($comment, 60, '', '', array('class' => 'mr-3 rounded-circle')); ?>
-
-									<div class="media-body">
-										<h5 class="mt-0 mb-1 font-weight-bold">
-											<?php echo esc_html($comment->comment_author); ?>
-										</h5>
-										<small class="text-muted d-block mb-2">
-											<?php echo get_comment_date('F j, Y \a\t g:i a', $comment); ?>
-										</small>
-										<p class="mb-0">
-											<?php echo esc_html($comment->comment_content); ?>
-										</p>
-									</div>
-								</div>
-							<?php endforeach; ?>
-						<?php else: ?>
-							<p class="text-muted mb-0">No comments yet. Be the first to comment!</p>
-						<?php endif; ?>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-
 </main><!-- #site-content -->
 
 <?php get_template_part('template-parts/footer-menus-widgets'); ?>
