@@ -7410,3 +7410,82 @@ h1.entry-title {
 .text-color {
   color: #555 !important;
 }
+
+/* Container từng comment */
+.comment-box {
+  background: transparent;
+}
+
+/* Toàn bộ inner (avatar + content) */
+.comment-inner {
+  align-items: flex-start;
+}
+
+/* Avatar — làm chữ nhật, có viền nhẹ và background xám giống mẫu */
+.comment-avatar .avatar-rect {
+  width: 56px; /* chiều ngang */
+  height: 64px; /* chiều dọc — chữ nhật */
+  object-fit: cover;
+  border: 1px solid #e0e0e0;
+  background: #f0f0f0; /* nếu ảnh rỗng sẽ thấy nền xám */
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Thanh tên (nền xám mỏng nằm sát trên khung nội dung) */
+.comment-author-bar {
+  background: #efefef; /* nền xám nhẹ */
+  border: 1px solid #e0e0e0;
+  border-bottom: none; /* tách rời với khung nội dung */
+  padding: 8px 12px;
+  margin-bottom: 0; /* để khớp với khung nội dung bên dưới */
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+/* Tên trong thanh */
+.comment-author-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Khung chứa nội dung comment (bên dưới thanh tên) */
+.comment-text {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-color: #e0e0e0;
+  margin-top: 0;
+  padding: 10px 12px;
+  box-shadow: none;
+}
+
+/* Thu gọn chữ/line-height cho nội dung */
+.comment-text p {
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 13px;
+}
+
+/* Link bài viết */
+.comment-text a {
+  color: #0d6efd;
+}
+
+/* Hover nhẹ nâng khung */
+.comment-box:hover .comment-text,
+.comment-box:hover .comment-author-bar {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+/* Nếu cần cân chỉnh khi màn hình nhỏ */
+@media (max-width: 767px) {
+  .comment-inner {
+    flex-direction: row;
+  }
+  .comment-avatar .avatar-rect {
+    width: 48px;
+    height: 56px;
+  }
+}

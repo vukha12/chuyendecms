@@ -12,7 +12,7 @@ get_header();
 <link rel="stylesheet" href="style.css">
 <main id="site-content" class="py-5 bg-light">
 
-    <div class="container">
+    <div class="container-fluid">
         <!-- Tiêu đề trang -->
         <header class="text-center mb-5">
             <h1 class="fw-bold">
@@ -70,80 +70,73 @@ get_header();
             <!-- ===== Cột Giữa: Kết quả tìm kiếm ===== -->
             <div class="col-md-6 mb-4">
                 <h4 class="fw-semibold border-bottom pb-2 mb-3">Kết quả tìm kiếm</h4>
+                <?php
+                if (have_posts()) {
 
-                <?php if (have_posts()) : ?>
-                    <div class="list-group">
-                        <?php while (have_posts()) : the_post(); ?>
-                            <div class="card mb-4 shadow-sm border-0">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('medium_large', array('class' => 'card-img-top rounded', 'alt' => get_the_title())); ?>
-                                    </a>
-                                <?php endif; ?>
+                    $i = 0;
 
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <a href="<?php the_permalink(); ?>" class="text-dark text-decoration-none">
-                                            <?php the_title(); ?>
-                                        </a>
-                                    </h5>
-                                    <p class="card-text text-muted">
-                                        <?php
-                                        // excerpt giới hạn (25 words)
-                                        if (has_excerpt()) {
-                                            echo esc_html(wp_trim_words(get_the_excerpt(), 25, '...'));
-                                        } else {
-                                            echo esc_html(wp_trim_words(wp_strip_all_tags(get_the_content()), 25, '...'));
-                                        }
-                                        ?>
-                                    </p>
-                                </div>
-                                <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-                                    <small class="text-secondary"><?php echo esc_html(get_the_date()); ?></small>
-                                    <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-outline-primary">Đọc tiếp</a>
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
-                    </div>
+                    while (have_posts()) {
+                        ++$i;
+                        the_post();
 
-                    <?php get_template_part('template-parts/pagination'); ?>
+                        get_template_part('template-parts/content', get_post_type());
+                    }
+                } elseif (is_search()) {
+                ?>
 
-                <?php else : ?>
-                    <div class="text-center my-5">
-                        <h5>Không tìm thấy kết quả nào.</h5>
-                        <p>Hãy thử tìm kiếm với từ khóa khác:</p>
-                        <?php get_search_form(); ?>
-                    </div>
-                <?php endif; ?>
+                    <div class="no-search-results-form section-inner thin">
+                        <?php
+                        get_search_form(
+                            array(
+                                'aria_label' => __('search again', 'twentytwenty'),
+                            )
+                        );
+                        ?>
+
+                    </div><!-- .no-search-results -->
+
+                <?php
+                }
+                ?>
+
             </div>
 
             <!-- ===== Cột Phải: Bình luận mới nhất ===== -->
             <div class="col-md-3 mb-4">
                 <h4 class="fw-semibold border-bottom pb-2 mb-3">Bình luận gần đây</h4>
+
                 <?php
                 $recent_comments = get_comments(array(
                     'number' => 5,
-                    'status' => 'approve'
+                    'status' => 'approve',
                 ));
+
                 if ($recent_comments) :
                     foreach ($recent_comments as $comment) :
                         $post_title = get_the_title($comment->comment_post_ID);
-                        $comment_content = wp_trim_words(wp_strip_all_tags($comment->comment_content), 20, '...');
+                        $comment_content = wp_trim_words(wp_strip_all_tags($comment->comment_content), 35, '...');
                 ?>
-                        <div class="card mb-3 border-0 shadow-sm">
-                            <div class="card-body d-flex">
-                                <!-- Avatar -->
-                                <div class="me-3">
-                                    <?php echo get_avatar($comment, 50, '', '', ['class' => 'rounded-circle shadow-sm']); ?>
+                        <div class="comment-box mb-3">
+                            <div class="comment-inner d-flex">
+                                <!-- Avatar (rectangle) -->
+                                <div class="comment-avatar flex-shrink-0">
+                                    <?php
+                                    // lấy avatar kích thước lớn, nhưng CSS sẽ ép tỉ lệ chữ nhật
+                                    echo get_avatar($comment, 64, '', '', array('class' => 'avatar-rect'));
+                                    ?>
                                 </div>
 
-                                <!-- Nội dung bình luận -->
-                                <div>
-                                    <h6 class="mb-1 fw-semibold text-dark"><?php echo esc_html($comment->comment_author); ?></h6>
-                                    <p class="mb-2 small text-muted"><?php echo esc_html($comment_content); ?></p>
-                                    <a href="<?php echo esc_url(get_comment_link($comment)); ?>" class="small text-decoration-none text-primary">
-                                        → <?php echo esc_html($post_title); ?>
-                                    </a>
+                                <!-- Phần nội dung (tên với nền xám ở trên + nội dung bên dưới) -->
+                                <div class="comment-content flex-grow-1 ms-3">
+                                    <div class="comment-author-bar">
+                                        <span class="comment-author-name"><?php echo esc_html($comment->comment_author); ?></span>
+                                    </div>
+
+                                    <div class="comment-text p-2 bg-white border">
+                                        <p class="mb-1 small text-muted" style="line-height:1.4;">
+                                            <?php echo esc_html($comment_content); ?>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
