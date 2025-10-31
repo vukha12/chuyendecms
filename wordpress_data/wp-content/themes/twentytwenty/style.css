@@ -7392,3 +7392,21 @@ h1.entry-title {
 .view-all a:hover {
   text-decoration: underline;
 }
+.comment-list .card {
+  transition: all 0.2s ease-in-out !important;
+}
+.comment-list .card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08) !important;
+}
+.comment-list .card-body {
+  padding: 0.75rem !important;
+}
+.comment-list img {
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover !important;
+}
+.text-color {
+  color: #555 !important;
+}
