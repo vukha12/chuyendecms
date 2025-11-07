@@ -50,7 +50,7 @@ get_header();
                                         <?php echo esc_html(get_the_title($rp->ID)); ?>
                                     </a>
                                 </h6>
-                                <p class="card-text small text-muted mb-0">
+                                <p class="card-text small text-muted mb-0 ">
                                     <?php
                                     $short = wp_trim_words(wp_strip_all_tags($rp->post_content), 10, '...');
                                     echo esc_html($short);
@@ -71,19 +71,22 @@ get_header();
             <div class="col-md-6 mb-4">
                 <h4 class="fw-semibold border-bottom pb-2 mb-3">Kết quả tìm kiếm</h4>
                 <?php
-                if (have_posts()) {
+                // 🔹 Tạo truy vấn mới, chỉ lấy 6 bài viết theo từ khóa tìm kiếm hiện tại
+                $args = array(
+                    'posts_per_page' => 6,
+                    's' => get_search_query(), // từ khóa tìm kiếm người dùng nhập vào
+                );
 
-                    $i = 0;
+                $query = new WP_Query($args);
 
-                    while (have_posts()) {
-                        ++$i;
-                        the_post();
-
+                if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
                         get_template_part('template-parts/content', get_post_type());
                     }
-                } elseif (is_search()) {
+                } else {
+                    // 🔹 Nếu không có bài nào khớp
                 ?>
-
                     <div class="no-search-results-form section-inner thin">
                         <?php
                         get_search_form(
@@ -92,11 +95,12 @@ get_header();
                             )
                         );
                         ?>
-
-                    </div><!-- .no-search-results -->
-
+                    </div>
                 <?php
                 }
+
+                // 🔹 Trả lại truy vấn gốc để tránh ảnh hưởng chỗ khác
+                wp_reset_postdata();
                 ?>
 
             </div>
@@ -149,7 +153,29 @@ get_header();
             </div>
         </div>
     </div>
-    <div></div>
+
+    <!-- Những bài viết mới nhất -->
+    <div class="latest-news-wrapper">
+        <ul class="latest-news-timeline list-unstyled">
+            <?php foreach ($recent_posts as $rp) : ?>
+                <li class="news-item">
+                    <span class="timeline-dot"></span>
+                    <div class="news-content">
+                        <div class="d-flex">
+                            <a class="text-primary fw-semibold" href="<?php echo esc_url(get_permalink($rp->ID)); ?>">
+                                <?php echo esc_html(get_the_title($rp->ID)); ?>
+                            </a>
+                            <span><?php echo get_the_date('j F, Y', $rp->ID); ?></span>
+                        </div>
+                        <p>
+                            <?php echo esc_html(wp_trim_words(wp_strip_all_tags($rp->post_content), 20, '...')); ?>
+                        </p>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
 </main>
 
 <?php get_footer(); ?>

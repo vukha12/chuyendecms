@@ -7321,10 +7321,6 @@ h1.entry-title {
   overflow: hidden;
 }
 
-.latest-news-wrapper {
-  background-color: #44bfc8;
-}
-
 .news-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 8px;
@@ -7488,4 +7484,77 @@ h1.entry-title {
     width: 48px;
     height: 56px;
   }
+}
+
+/* ==== Timeline Latest News (fix căn giữa, width nhỏ gọn) ==== */
+.latest-news-wrapper {
+  display: flex;
+  justify-content: center; /* căn giữa toàn bộ khối timeline */
+}
+
+.latest-news-timeline {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  margin: 1.5rem auto;
+  border-left: 2px solid #dcdcdc;
+}
+
+/* Mỗi mục tin tức */
+.latest-news-timeline .news-item {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+/* Chấm tròn giữa line */
+.latest-news-timeline .timeline-dot {
+  position: absolute;
+  left: -8px; /* Căn giữa chính xác trên line */
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 2px solid #0078ff;
+  border-radius: 50%;
+}
+
+/* Nội dung tin tức */
+.latest-news-timeline .news-content {
+  margin-left: 10px;
+}
+
+/* Tiêu đề */
+.latest-news-timeline .news-content a {
+  color: #0078ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.latest-news-timeline .news-content a:hover {
+  text-decoration: underline;
+}
+
+/* Ngày */
+.latest-news-timeline .news-content span {
+  color: #0078ff;
+  font-size: 13px;
+}
+
+/* Mô tả */
+.latest-news-timeline .news-content p {
+  color: #444;
+  font-size: 14px;
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+/* Tiêu đề + ngày trên cùng một hàng */
+.latest-news-timeline .news-content .d-flex {
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* Hover nhẹ */
+.latest-news-timeline .news-item:hover .timeline-dot {
+  background-color: #0078ff;
 }
